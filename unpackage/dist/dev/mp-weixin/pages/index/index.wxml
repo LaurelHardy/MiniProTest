@@ -1,1 +1,1 @@
-<view class="content"></view>
+<view class="indexContainer"><view class="header"><image class="logo" src="/static/logo.png" mode></image><view class="search"><text class="iconfont icon-sousuo_tianchong-copy"></text><input type="text" value="" placeholder="搜索" placeholder-class="placeholder"/></view><button type="default">button</button></view></view>

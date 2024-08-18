@@ -3,14 +3,14 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "Panda"
+				"navigationBarTitleText": "首页"
 			}
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "Panda",
-		"navigationBarBackgroundColor": "#51783c",
+		"navigationBarBackgroundColor": "#4bb8b8",
 		"backgroundColor": "#F8F8F8"
 	},
 	"uniIdRouter": {}
