@@ -20,21 +20,38 @@
 
 <script>
 	import request from '../../utils/request';
+	// vuex
+	import { mapActions, mapState } from 'vuex';
 	export default {
 		data() {
 			return {
-				indexData: {} ,// 首页数据
+				// indexData: {} ,// 首页数据
 				navIndex: -1, // 导航的标记 点谁，谁亮
 			}
+		},
+		computed: {
+			// ...mapState('模块', ['数据'])
+			// ...mapState('home', ['indexData'])
+			...mapState({
+				indexData: state=>state.home.indexData
+			})
 		},
 		onLoad() {
 
 		},
 		mounted() {
-			this.getIndexData();
+			// 获取仓库里的测试数据
+			console.log(this.$store.state.home.test);
+			// 1、触发 action: this.$store.dispatch('模块名/action名')
+			this.$store.dispatch('home/getIndexDataActions')
+			// 2、触发action
+			this.getIndexDataActions();		
+			
+			// this.getIndexData();
 		},
 		methods: {
 			// 获取首页数据
+			...mapActions('home',['getIndexDataActions']),
 			async getIndexData() {
 				const res = await request('/getIndexData'); //小程序	
 				// const res = await request('/api/getIndexData'); //H5
