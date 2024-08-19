@@ -10036,9 +10036,9 @@ var _default = function _default(url) {
   var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'GET';
   return new Promise(function (resolve, reject) {
     uni.request({
-      url: _base.default.host + url,
-      // 小程序
-      // url, // H5
+      // url: base.host+url, // 小程序
+      url: url,
+      // H5
       data: data,
       method: method,
       /** header: {

@@ -196,11 +196,10 @@ var _default = {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return (0, _request.default)('/getIndexData');
+                return (0, _request.default)('/api/getIndexData');
               case 2:
                 res = _context.sent;
-                //小程序	
-                // const res = await request('/api/getIndexData'); //H5
+                //H5
                 console.log('=====', res);
                 _this.indexData = res.indexData;
               case 5:

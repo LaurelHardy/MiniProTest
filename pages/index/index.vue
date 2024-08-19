@@ -45,8 +45,8 @@
 		methods: {
 			// 获取首页数据
 			async getIndexData() {
-				const res = await request('/getIndexData'); //小程序	
-				// const res = await request('/api/getIndexData'); //H5
+				// const res = await request('/getIndexData'); //小程序	
+				const res = await request('/api/getIndexData'); //H5
 				console.log('=====', res);
 				this.indexData = res.indexData;
 			},
