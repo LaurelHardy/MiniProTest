@@ -29,6 +29,7 @@
 </template>
 
 <script>
+	import request from '../../utils/request';
 	export default {
 		data() {
 			return {
@@ -38,7 +39,9 @@
 		onLoad() {
 
 		},
-		
+		created() {
+			this.getIndexData();
+		},
 		methods: {
 			// 获取首页数据
 			async getIndexData() {

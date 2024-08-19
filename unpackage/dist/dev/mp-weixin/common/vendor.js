@@ -10013,6 +10013,69 @@ function _asyncToGenerator(fn) {
 }
 module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
+/***/ }),
+/* 43 */
+/*!****************************************************************!*\
+  !*** C:/Users/Laurel/HBuilderProjects/Client/utils/request.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _base = _interopRequireDefault(__webpack_require__(/*! ./base */ 44));
+// getIndexData
+var _default = function _default(url) {
+  var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'GET';
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: _base.default.host + url,
+      // 小程序
+      // url, // H5
+      data: data,
+      method: method,
+      /** header: {
+          'custom-header': 'hello' //自定义请求头信息
+      }, */
+      success: function success(res) {
+        resolve(res.data);
+      },
+      fail: function fail(err) {
+        reject(err);
+      }
+    });
+  });
+};
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+/* 44 */
+/*!*************************************************************!*\
+  !*** C:/Users/Laurel/HBuilderProjects/Client/utils/base.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  host: 'http://localhost:7788'
+};
+exports.default = _default;
+
 /***/ })
 ]]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map
