@@ -15,14 +15,23 @@
 				<view class="navItem" :class="{active: navIndex === index}" @click="changeIndex(index)" v-for="(item, index) in indexData.kingKongModule.kingKongList"  :key="item.L1Id">
 				{{item.text}}</view>				
 			</scroll-view>
+			<!-- 内容区 -->
+			<scroll-view scroll-y="true" >
+				<!-- 推荐模块 -->
+				<Recommend />
+			</scroll-view>
 	</view>
 </template>
 
 <script>
 	import request from '../../utils/request';
+	import Recommend from '../../components/Recommend/Recommend.vue';
 	// vuex
 	import { mapActions, mapState } from 'vuex';
 	export default {
+		components: {
+			Recommend
+		},
 		data() {
 			return {
 				// indexData: {} ,// 首页数据
@@ -100,13 +109,14 @@
 							font-size 26rpx
 							padding 0 4rpx
 		.navScroll
+			height: 80rpx
 			// 不换行
 			white-space nowrap
 			.navItem
 				display inline-block
 				height 40rpx
-				padding 10rpx
-				font-size 26rpx
+				padding 15rpx
+				font-size 30rpx
 				&.active
 					color: #BB2C08
 					border-bottom 3rpx solid #BB2C08

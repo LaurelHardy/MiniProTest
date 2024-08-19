@@ -37,13 +37,14 @@
   padding: 0 4rpx;
 }
 .indexContainer .navScroll {
+  height: 80rpx;
   white-space: nowrap;
 }
 .indexContainer .navScroll .navItem {
   display: inline-block;
   height: 40rpx;
-  padding: 10rpx;
-  font-size: 26rpx;
+  padding: 15rpx;
+  font-size: 30rpx;
 }
 .indexContainer .navScroll .navItem.active {
   color: #bb2c08;
