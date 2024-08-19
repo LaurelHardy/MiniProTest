@@ -9,6 +9,22 @@
 				</view>
 				<button type="default">button</button>
 			</view>
+			<!-- 滑块 -->
+			<scroll-view class="navScroll" scroll-x="true" enable-flex>
+				<view class="navItem active">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view> 
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view>
+				<view class="navItem">推荐</view> 
+			</scroll-view>
 	</view>
 </template>
 
@@ -16,14 +32,25 @@
 	export default {
 		data() {
 			return {
-				
+				indexData: {} ,// 首页数据
 			}
 		},
 		onLoad() {
 
 		},
+		
 		methods: {
-
+			// 获取首页数据
+			async getIndexData() {
+				const res = await request('/getIndexData'); //小程序	
+				// const res = await request('/api/getIndexData'); //H5
+				console.log('=====', res);
+				this.indexData = res.indexData;
+			},
+			// 点击获取下标
+			changeIndex(index) {
+				this.navIndex = index;
+			}
 		}
 	}
 </script>
@@ -61,4 +88,15 @@
 							text-align center
 							font-size 26rpx
 							padding 0 4rpx
+		.navScroll
+			// 不换行
+			white-space nowrap
+			.navItem
+				display inline-block
+				height 40rpx
+				padding 10rpx
+				font-size 26rpx
+				&.active
+					color: #BB2C08
+					border-bottom 3rpx solid #BB2C08
 </style>

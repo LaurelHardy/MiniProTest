@@ -36,4 +36,17 @@
   font-size: 26rpx;
   padding: 0 4rpx;
 }
+.indexContainer .navScroll {
+  white-space: nowrap;
+}
+.indexContainer .navScroll .navItem {
+  display: inline-block;
+  height: 40rpx;
+  padding: 10rpx;
+  font-size: 26rpx;
+}
+.indexContainer .navScroll .navItem.active {
+  color: #bb2c08;
+  border-bottom: 3rpx solid #bb2c08;
+}
 
