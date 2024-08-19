@@ -11,19 +11,9 @@
 			</view>
 			<!-- 滑块 -->
 			<scroll-view class="navScroll" scroll-x="true" enable-flex>
-				<view class="navItem active">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view> 
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view>
-				<view class="navItem">推荐</view> 
+				<view class="navItem" :class="{active: navIndex === -1}" @click="changeIndex(-1)">推荐</view>
+				<view class="navItem" :class="{active: navIndex === index}" @click="changeIndex(index)" v-for="(item, index) in indexData.kingKongModule.kingKongList"  :key="item.L1Id">
+				{{item.text}}</view>				
 			</scroll-view>
 	</view>
 </template>
@@ -34,19 +24,20 @@
 		data() {
 			return {
 				indexData: {} ,// 首页数据
+				navIndex: -1, // 导航的标记 点谁，谁亮
 			}
 		},
 		onLoad() {
 
 		},
-		created() {
+		mounted() {
 			this.getIndexData();
 		},
 		methods: {
 			// 获取首页数据
 			async getIndexData() {
-				// const res = await request('/getIndexData'); //小程序	
-				const res = await request('/api/getIndexData'); //H5
+				const res = await request('/getIndexData'); //小程序	
+				// const res = await request('/api/getIndexData'); //H5
 				console.log('=====', res);
 				this.indexData = res.indexData;
 			},

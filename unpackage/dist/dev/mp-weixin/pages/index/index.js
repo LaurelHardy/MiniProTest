@@ -165,24 +165,16 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../../utils/reques
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
   data: function data() {
     return {
-      indexData: {} // 首页数据
+      indexData: {},
+      // 首页数据
+      navIndex: -1 // 导航的标记 点谁，谁亮
     };
   },
   onLoad: function onLoad() {},
-  created: function created() {
+  mounted: function mounted() {
     this.getIndexData();
   },
   methods: {
@@ -196,10 +188,11 @@ var _default = {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return (0, _request.default)('/api/getIndexData');
+                return (0, _request.default)('/getIndexData');
               case 2:
                 res = _context.sent;
-                //H5
+                //小程序	
+                // const res = await request('/api/getIndexData'); //H5
                 console.log('=====', res);
                 _this.indexData = res.indexData;
               case 5:
