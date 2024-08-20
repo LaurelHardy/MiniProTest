@@ -22,4 +22,20 @@
   margin: 10rpx;
   font-size: 24rpx;
 }
+.recommend .kingKongList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.recommend .kingKongList .kingKongItem {
+  width: 30%;
+  text-align: center;
+  margin: 10rpx 0;
+}
+.recommend .kingKongList .kingKongItem .kingKongImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+.recommend .kingKongList .kingKongItem .kingKongDesc {
+  font-size: 25rpx;
+}
 

@@ -26,6 +26,13 @@
 				<text class="desc">{{item.desc}}</text>
 			</view>
 		</view>
+		<!-- 3、10个导航图标  数据: kingKongMudule -->
+		<view class="kingKongList" v-if="indexData.kingKongModule">
+			<view class="kingKongItem" v-for="item in indexData.kingKongModule.kingKongList" :key="item.L1Id">
+				<image class="kingKongImg" :src="item.picUrl" mode=""></image>
+				<view class="kingKongDesc"> {{item.text}} </view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -65,4 +72,16 @@
 				.desc
 					margin: 10rpx
 					font-size: 24rpx
+		.kingKongList
+			display: flex
+			flex-wrap: wrap
+			.kingKongItem
+				width: 30%
+				text-align: center
+				margin: 10rpx 0
+				.kingKongImg
+					width: 100rpx
+					height: 100rpx
+				.kingKongDesc
+					font-size: 25rpx
 </style>
