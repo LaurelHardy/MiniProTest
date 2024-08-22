@@ -1,0 +1,1 @@
+<view>{{'CateList---'+L1Id+"---"+cateObj.category.parentId+''}}</view>

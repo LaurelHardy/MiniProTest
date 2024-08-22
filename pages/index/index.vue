@@ -11,32 +11,40 @@
 			</view>
 			<!-- 滑块 -->
 			<scroll-view class="navScroll" scroll-x="true" enable-flex>
-				<view class="navItem" :class="{active: navIndex === -1}" @click="changeIndex(-1)">推荐</view>
-				<view class="navItem" :class="{active: navIndex === index}" @click="changeIndex(index)" v-for="(item, index) in indexData.kingKongModule.kingKongList"  :key="item.L1Id">
-				{{item.text}}</view>				
+				<view class="navItem" :class="{active: navIndex === -1}" @click="changeIndex(-1, -1)">推荐</view>
+				<view class="navItem" 
+				:class="{active: navIndex === index}" 
+				@click="changeIndex(index, item.L1Id)" 
+				v-for="(item, index) in indexData.kingKongModule.kingKongList" 
+				:key="item.L1Id">{{item.text}}
+				</view>				
 			</scroll-view>
 			<!-- 内容区 -->
 			<scroll-view scroll-y="true" >
-				<!-- 推荐模块 -->
-				<Recommend />
+				<!-- 推荐模块, 与其他模块互斥关系 -->
+				<Recommend v-if="navIndex===-1"></Recommend>
+				<CateList v-else :L1Id = 'L1Id'></CateList>
 			</scroll-view>
 	</view>
 </template>
 
 <script>
-	import request from '../../utils/request';
-	import Recommend from '../../components/Recommend/Recommend.vue';
+	import request from '../../utils/request'
+	import Recommend from '../../components/Recommend/Recommend.vue'
+	import CateList from '../../components/CateList/CateList.vue'
 	// vuex
 	import { mapActions, mapState } from 'vuex';
 	export default {
 		components: {
-			Recommend
+			Recommend,
+			CateList
 		},
 		data() {
 			return {
 				// indexData: {} ,// 首页数据
 				navIndex: -1, // 导航的标记 点谁，谁亮
-			}
+				L1Id: -1,
+			};
 		},
 		computed: {
 			// ...mapState('模块', ['数据'])
@@ -68,8 +76,9 @@
 				this.indexData = res.indexData;
 			},
 			// 点击获取下标
-			changeIndex(index) {
+			changeIndex(index, L1Id) {
 				this.navIndex = index;
+				this.L1Id = L1Id;
 			}
 		}
 	}
