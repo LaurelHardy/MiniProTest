@@ -1,6 +1,30 @@
 <template>
-	<view>
-		CateList---{{L1Id}}---{{cateObj.category.parentId}}
+	<view class="cateList">
+		<!-- 轮播图 -->
+		<swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" v-if="cateObj.category">
+			<swiper-item v-for="(item, index) in cateObj.category.bannerUrlList" :key="index">
+				<view class="swiper-item">
+					<image :src="item" mode=""></image>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item"></view>
+			</swiper-item>
+		</swiper>
+		<view class="title">
+			{{cateObj.category.frontName}}
+		</view>
+		<view class="desc">
+			{{cateObj.category.frontDesc}}
+		</view>
+		<!-- 列表 -->
+		<view class="goodsList">
+			<view class="goodsItem" v-for="item in cateObj.itemList" :key="item.id">
+				<image :src="item.primaryPicUrl" mode=""></image>
+				<view class="goodsDesc">{{item.name}}</view>
+				<!-- <view class="goodsPrice">{{item.retailPrice}}</view> -->
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -33,5 +57,37 @@
 </script>
 
 <style lang="stylus">
-
+	.cateList
+		.swiper
+			height: 360rpx
+			image
+				width: 100%
+				height: 360rpx
+		.title
+			font-size: 40rpx
+			line-height: 80rpx
+			color: #333
+			text-align: center
+		
+		.desc
+			font-size: 30rpx
+			line-height: 40rpx
+			color: #666
+			text-align: center		
+		.goodsList
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-around
+			&::after
+				content: ""
+				width: 344rpx
+			.goodsItem
+				width: 344rpx
+				height: 480rpx
+				image
+					width: 344rpx
+					height: 344rpx
+				.goodsPrice
+					color: red
+					font-size: 36rpx
 </style>
