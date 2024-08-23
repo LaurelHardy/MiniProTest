@@ -101,10 +101,10 @@ var components
 try {
   components = {
     Recommend: function () {
-      return __webpack_require__.e(/*! import() | components/Recommend/Recommend */ "components/Recommend/Recommend").then(__webpack_require__.bind(null, /*! @/components/Recommend/Recommend.vue */ 68))
+      return __webpack_require__.e(/*! import() | components/Recommend/Recommend */ "components/Recommend/Recommend").then(__webpack_require__.bind(null, /*! @/components/Recommend/Recommend.vue */ 70))
     },
     CateList: function () {
-      return __webpack_require__.e(/*! import() | components/CateList/CateList */ "components/CateList/CateList").then(__webpack_require__.bind(null, /*! @/components/CateList/CateList.vue */ 75))
+      return __webpack_require__.e(/*! import() | components/CateList/CateList */ "components/CateList/CateList").then(__webpack_require__.bind(null, /*! @/components/CateList/CateList.vue */ 77))
     },
   }
 } catch (e) {
@@ -177,12 +177,12 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var Recommend = function Recommend() {
   __webpack_require__.e(/*! require.ensure | components/Recommend/Recommend */ "components/Recommend/Recommend").then((function () {
-    return resolve(__webpack_require__(/*! ../../components/Recommend/Recommend.vue */ 68));
+    return resolve(__webpack_require__(/*! ../../components/Recommend/Recommend.vue */ 70));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var CateList = function CateList() {
   __webpack_require__.e(/*! require.ensure | components/CateList/CateList */ "components/CateList/CateList").then((function () {
-    return resolve(__webpack_require__(/*! ../../components/CateList/CateList.vue */ 75));
+    return resolve(__webpack_require__(/*! ../../components/CateList/CateList.vue */ 77));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

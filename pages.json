@@ -7,14 +7,14 @@
 			}
 		},
 		{
-			"path" : "pages/cart/cart",
+			"path" : "pages/category/category",
 			"style" : 
 			{
 				"navigationBarTitleText" : "分类"
 			}
 		},
 		{
-			"path" : "pages/category/category",
+			"path" : "pages/cart/cart",
 			"style" : 
 			{
 				"navigationBarTitleText" : "购物车"

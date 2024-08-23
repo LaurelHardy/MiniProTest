@@ -1,6 +1,6 @@
 <template>
 	<view>
-		cart
+		此页省略
 	</view>
 </template>
 
