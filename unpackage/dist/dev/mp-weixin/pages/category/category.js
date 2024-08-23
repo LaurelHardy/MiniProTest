@@ -169,10 +169,12 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../../utils/reques
 //
 //
 //
+//
 var _default = {
   data: function data() {
     return {
-      categoryDatas: []
+      categoryDatas: [],
+      navIndex: 0
     };
   },
   mounted: function mounted() {
@@ -200,6 +202,9 @@ var _default = {
           }
         }, _callee);
       }))();
+    },
+    changeNavIndex: function changeNavIndex(index) {
+      this.navIndex = index;
     }
   }
 };
