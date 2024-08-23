@@ -15,8 +15,16 @@
 				</scroll-view>
 			</view>
 			<view class="right">
-				<scroll-view class="conetntScroll" scroll-y="true" >
-					<view></view>
+				<scroll-view class="categoryScroll" scroll-y="true" >
+					<!-- 大图 -->
+					<image class="cateImg" :src="cateObj.imgUrl" mode=""></image>
+					<!-- 列表 -->
+					<view class="goodsList">
+						<view class="goodsItem" v-for="item in cateObj.subCateList" :key="item.id">
+							<image class="goodsImg" :src="item.wapBannerUrl" mode=""></image>
+							<view class="goodsName">{{item.name}}</view>
+						</view>						
+					</view>
 				</scroll-view>
 			</view>
 		</view>
@@ -34,6 +42,13 @@ import request from '../../utils/request';
 		},
 		mounted() {
 			this.getcategory();
+		},
+		computed:{
+			// 计算属性
+			cateObj() {
+				console.log(this.categoryDatas[this.navIndex]);
+				return this.categoryDatas[this.navIndex]
+			}
 		},
 		methods:{
 			async getcategory() {
@@ -89,5 +104,24 @@ import request from '../../utils/request';
 							top: 10rpx
 			.right
 				width: 80%
-				height: calc(100vh - 102rpx)				
+				height: 100%
+				.categoryScroll
+					height: 100%
+					.cateImg
+						width: 520rpx
+						height: 200rpx
+						display: block
+						margin: 10rpx auto
+					.goodsList
+						display: flex
+						flex-wrap: wrap
+						.goodsItem
+							width: 33.33%
+							height: 200rpx
+							text-align: center
+							.goodsImg
+								width: 90%
+								height: 140rpx
+							.goodsName
+								font-size: 24rpx								
 </style>

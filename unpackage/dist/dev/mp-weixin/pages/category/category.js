@@ -170,6 +170,14 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../../utils/reques
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -179,6 +187,13 @@ var _default = {
   },
   mounted: function mounted() {
     this.getcategory();
+  },
+  computed: {
+    // 计算属性
+    cateObj: function cateObj() {
+      console.log(this.categoryDatas[this.navIndex]);
+      return this.categoryDatas[this.navIndex];
+    }
   },
   methods: {
     getcategory: function getcategory() {
