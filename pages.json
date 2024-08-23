@@ -26,6 +26,13 @@
 			{
 				"navigationBarTitleText" : "个人中心"
 			}
+		},
+		{
+			"path" : "pages/login/login",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	"globalStyle": {
